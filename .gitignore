@@ -1,0 +1,24 @@
+# Python / PyCharm / Virtual Env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+env/
+venv/
+
+# PyCharm
+.idea/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# pytest cache
+.pytest_cache/
+
+# Project-specific ignores
+timeseries.db
+timeseries/
+metadata/
+user_data/
+etfs.csv
