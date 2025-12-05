@@ -87,7 +87,7 @@ The application requires historical price data to function.
    * Select Start/End dates and the Benchmark ticker (e.g., SPY).
    * Click **Run Analysis**.
 
-4. **Visualize**:
+4. **Visualize**::w
    * Go to the **Charting** sub-tab.
    * Select a chart type (e.g., "Equity Curve") and click **Generate Chart**.
 
