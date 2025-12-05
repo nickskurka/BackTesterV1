@@ -42,66 +42,6 @@ Visualize your portfolio's performance with interactive, exportable charts:
 
 * **Distribution**: Histogram of daily returns with mean/median markers.
 
-## Financial Formulas
-
-### 1. Realized Risk-Free Rate (SOFR)
-
-Annualized risk-free rate from daily rates:
-
-\[
-r_{\text{annualized}} = \left( \prod_{i=1}^{n} \left( 1 + \frac{\text{SOFR}_i}{252} \right) \right)^{\frac{252}{n}} - 1
-\]
-
-where \( \text{SOFR}_i \) is the daily SOFR rate, and \( n \) is the number of days.
-
-### 2. Daily Returns
-
-\[
-r_{i} = \frac{P_i - P_{i-1}}{P_{i-1}}
-\]
-
-where \( P_i \) is the price at day \( i \).
-
-### 3. Annualized Volatility
-
-\[
-\sigma_{\text{annualized}} = \text{std}(r_i) \times \sqrt{252}
-\]
-
-### 4. Sharpe Ratio
-
-\[
-\text{Sharpe Ratio} = \frac{\bar{r}_p - r_f}{\sigma_p}
-\]
-
-where \( \bar{r}_p \) is the portfolio mean return, \( r_f \) is the risk-free rate, and \( \sigma_p \) is portfolio volatility.
-
-### 5. CAPM Metrics
-
-**Beta:**
-
-\[
-\beta = \frac{\text{Cov}(r_p, r_m)}{\text{Var}(r_m)}
-\]
-
-**Alpha:**
-
-\[
-\alpha = \bar{r}_p - \left( r_f + \beta (\bar{r}_m - r_f) \right)
-\]
-
-where \( r_m \) is the benchmark return.
-
-### 6. Maximum Drawdown
-
-\[
-\text{Max Drawdown} = \max_{t \in [0, T]} \left( \frac{\text{Peak}_t - P_t}{\text{Peak}_t} \right)
-\]
-
-where \( \text{Peak}_t = \max_{s \le t} P_s \).
-
----
-
 ## Installation
 
 ### Prerequisites
@@ -111,3 +51,48 @@ where \( \text{Peak}_t = \max_{s \le t} P_s \).
 
 ```bash
 pip install pandas numpy matplotlib
+```
+
+(Note: `tkinter` is included with standard Python installations)
+
+### Project Structure
+
+* `ui.py`: The main entry point launching the Graphical User Interface.
+* `portfolio.py`: Core class defining the Portfolio object and math for weighted metrics.
+* `charting.py`: Matplotlib integration for generating financial charts within the UI.
+* `utils.py`: Helper functions for data fetching (CSV/SQLite), date parsing, and financial formulas.
+
+## Data Setup
+
+The application requires historical price data to function.
+
+1. **Market Data**: Place CSV files for tickers (e.g., `AAPL.csv`, `SPY.csv`) in `data/timeseries/`. Files must contain `Date` and `Close` columns.
+2. **Risk-Free Rate**: Ensure `data/SOFR.csv` exists for accurate risk-free rate calculations.
+
+## Usage
+
+1. **Start the Application**:
+
+   ```bash
+   python ui.py
+   ```
+
+2. **Build a Portfolio**:
+   * Click **New** to start fresh.
+   * Click **Add Ticker** to manually input symbols (e.g., AAPL) and weights.
+   * Alternatively, import a CSV file with `Ticker` and `Weight` columns.
+
+3. **Run Analysis**:
+   * Switch to the **Metrics & Analysis** tab.
+   * Select Start/End dates and the Benchmark ticker (e.g., SPY).
+   * Click **Run Analysis**.
+
+4. **Visualize**:
+   * Go to the **Charting** sub-tab.
+   * Select a chart type (e.g., "Equity Curve") and click **Generate Chart**.
+
+## License
+
+MIT#   B a c k T e s t e r V 1 
+ 
+ 
