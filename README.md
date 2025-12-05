@@ -2,8 +2,8 @@
 
 Portfolio Manager is a comprehensive Python-based desktop application for managing investment portfolios, analyzing performance metrics against market benchmarks, and visualizing risk-return profiles. Built with `tkinter` for the GUI and `pandas`/`matplotlib` data handling and analysis.
 
-![Portfolio Manager Demo](media/demo5.jpg)
-![Portfolio Manager Interface](media/demo1.jpg)
+![Portfolio Manager Demo](media/demo5.png)
+![Portfolio Manager Interface](media/demo1.png)
 
 ## Features
 
@@ -24,11 +24,11 @@ Run detailed simulations against benchmarks (e.g., SPY) to calculate key metrics
 ### 3. Charting
 Visualize your portfolio's performance with interactive, exportable charts:
 * **Equity Curve**: Compare cumulative returns vs. benchmark.
-  ![Equity Curve](media/demo2.jpg)
+  ![Equity Curve](media/demo2.png)
 * **Drawdown Chart**: Visualize underwater periods and depth.
-  ![Drawdown Analysis](media/demo3.jpg)
+  ![Drawdown Analysis](media/demo3.png)
 * **Monthly Heatmap**: Month-by-month return visualization.
-  ![Monthly Heatmap](media/demo4.jpg)
+  ![Monthly Heatmap](media/demo4.png)
 * **Distribution**: Histogram of daily returns with mean/median markers.
 
 ## Installation
@@ -38,3 +38,4 @@ Visualize your portfolio's performance with interactive, exportable charts:
 * The following Python packages:
 ```bash
 pip install pandas numpy matplotlib
+
