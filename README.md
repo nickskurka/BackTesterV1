@@ -83,17 +83,28 @@ where $\bar{r}_p$ is the portfolio mean return, $r_f$ is the risk-free rate, and
 
 **Beta:**
 
-$\beta = \frac{\text{Cov}(r_p, r_m)}{\text{Var}(r_m)}$
+$$
+\beta = \frac{\mathrm{Cov}(r_p, r_m)}{\mathrm{Var}(r_m)}
+$$
 
 **Alpha:**
 
-$\alpha = \bar{r}_p - \left( r_f + \beta (\bar{r}_m - r_f) \right)$
+$$
+\alpha = \bar{r}_p - \left( r_f + \beta(\bar{r}_m - r_f) \right)
+$$
+
 
 where $r_m$ is the benchmark return.
 
 ### 6. Maximum Drawdown
 
-$\text{Max Drawdown} = \max_{t \in [0, T]} \left( \frac{\text{Peak}_t - P_t}{\text{Peak}_t} \right)$
+$$
+\text{Max Drawdown} = 
+\max_{t \in [0, T]}
+\left(
+\frac{\text{Peak}_t - P_t}{\text{Peak}_t}
+\right)
+$$
 
 where $\text{Peak}_t = \max_{s \le t} P_s$.
 
@@ -121,4 +132,5 @@ where:
 ```bash
 pip install pandas numpy matplotlib
 ```
+
 
