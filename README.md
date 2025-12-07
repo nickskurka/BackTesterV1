@@ -6,11 +6,11 @@ Portfolio Manager is a comprehensive Python-based desktop application for managi
 
 ## Bugs / To Implement
 
-- Manage edge cases related to short portfolio timeframes – frequency and annualization concerns.
+- Manage edge cases related to short portfolio timeframes – frequency and annualization concerns. 
 - Deal with incomplete or missing data for tickers in the specified timeframe.
 - Incorporate dividends – requires extensive metadata like historic ex-dividend, record dates, etc. Possibly start with flat or variable continuous accrual, although corporate action dates are required for precision, especially in more active strategies.
 - Normalization often goes +/- a basis point or two; further rounding or actual $ value/share rounding needed in future for precision.
-- SOFR data doesn't go back far enough.
+- SOFR data doesn't go back far enough. Fetch LIBOR prior to 2018 and refactor
 
 BackTesterV1 is a comprehensive Python-based desktop application for managing investment portfolios, creating strategies, analyzing performance metrics against market benchmarks, and visualizing risk-return profiles. Built with `tkinter` for the GUI and `pandas`/`matplotlib` for data handling and analysis.
 
@@ -97,6 +97,20 @@ $\text{Max Drawdown} = \max_{t \in [0, T]} \left( \frac{\text{Peak}_t - P_t}{\te
 
 where $\text{Peak}_t = \max_{s \le t} P_s$.
 
+### 7. Treynor Ratio
+
+The Treynor Ratio measures **excess return per unit of systematic risk (β)**:
+
+$$
+\text{Treynor Ratio} = \frac{\bar{r}_p - r_f}{\beta}
+$$
+
+where:
+
+- $\bar{r}_p$ = portfolio mean return  
+- $r_f$ = risk-free rate  
+- $\beta$ = portfolio beta relative to the benchmark
+
 ## Installation
 
 ### Prerequisites
@@ -107,3 +121,4 @@ where $\text{Peak}_t = \max_{s \le t} P_s$.
 ```bash
 pip install pandas numpy matplotlib
 ```
+
