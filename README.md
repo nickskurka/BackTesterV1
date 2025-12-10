@@ -106,9 +106,6 @@ $$
 \right)
 $$
 
-where $$
-\text{Peak}_t = \max_{s \le t} P_s
-$$
 
 ### 7. Treynor Ratio
 
@@ -134,6 +131,7 @@ where:
 ```bash
 pip install pandas numpy matplotlib
 ```
+
 
 
 
